@@ -4,9 +4,10 @@ Feature: sample karate test script
 
   Background:
     * url 'https://jsonplaceholder.typicode.com'
+    * def randomTag = random_tag()
 
   Scenario: create a user and then get it by id
-    * def response = call read('library.feature@getusers')
+    * def response = call read('classpath:examples/library.feature@getusers')
     * print response[0]
     * def user =
       """
@@ -27,11 +28,4 @@ Feature: sample karate test script
     And request user
     When method post
     Then status 201
-
-    * def id = response.id
-    * print 'created id is: ', id
-
-#    Given path id
-    # When method get
-    # Then status 200
-    # And match response contains user
+    Then karate.log('Random Tag = ', randomTag)
