@@ -10,6 +10,6 @@ public class TestRunner {
         Results results = Runner
                 .path("classpath:")
                 .tags(Collections.singletonList("demo"))
-                .parallel(2);
+                .parallel(1);
     }
 }
