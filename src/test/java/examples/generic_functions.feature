@@ -1,5 +1,5 @@
 @ignore
-Feature:
+Feature: Generic Functions
 
 Background:
 	# function for creating a random numeric value of length x
