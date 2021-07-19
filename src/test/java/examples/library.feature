@@ -10,6 +10,13 @@ Background:
     * def libraryData = call read('classpath:examples/library.feature@libraryData')
 
 
-  @libraryData
-  Scenario: Get library data
-    * def libraryData = "VALUE_libraryData"
+ @libraryData
+ Scenario: Get library data
+   * def libraryData = "VALUE_libraryData"
+
+  # @libraryData
+  # Scenario: get all users and then get the first user by id
+  #   * url 'https://jsonplaceholder.typicode.com'
+  #   Given path 'users'
+  #   When method get
+  #   Then status 200

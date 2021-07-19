@@ -9,7 +9,7 @@ public class TestRunner {
     public void testParallel() {
         Results results = Runner
                 .path("classpath:")
-                .tags(Collections.singletonList("demo"))
+                .tags(Collections.singletonList("unexpected"))
                 .parallel(1);
     }
 }
