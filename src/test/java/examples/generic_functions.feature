@@ -2,6 +2,7 @@
 Feature: Generic Functions
 
 Background:
+	* def tempData = {'genericFunctions' : 'allowed'}
 	# function for creating a random numeric value of length x
 	# Input: length of value
 	# output: random number of length x (input)

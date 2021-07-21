@@ -8,6 +8,7 @@ Background:
   @getLibraryData
   Scenario: Call library data
     * def libraryData = call read('classpath:examples/library.feature@libraryData')
+    * karate.log('random_tag = ', random_tag())
 
 
  @libraryData
