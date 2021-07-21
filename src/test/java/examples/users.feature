@@ -7,6 +7,7 @@ Feature: sample karate test script
     * def randomTag = random_tag()
 
   Scenario: create a user and then get it by id
+    * def res = call read('classpath:examples/library.feature@getKittenIds')
     * def response = call read('classpath:examples/library.feature@getusers')
     * print response[0]
     * def user =

@@ -10,3 +10,8 @@ Feature: sample karate test library
     Given path 'users'
     When method get
     Then status 200
+
+    @getKittenIds
+    Scenario:
+      * def allKittens = $masterList[*].id
+      * karate.log("allKittens ", allKittens)
