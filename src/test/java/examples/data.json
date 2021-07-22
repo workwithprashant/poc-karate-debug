@@ -1,0 +1,19 @@
+[
+    {
+      "id": "1",
+      "arch": "high",
+      "litter": 1,
+      "color": 1,
+      "name": "Super kitten",
+      "breeder": "Someone Ethical"
+    },
+    {
+      "id": "2",
+      "arch": "high",
+      "litter": 6,
+      "color": 2,
+      "name": "Poor Kitten",
+      "breeder": "Backyard"
+    }
+    ]
+  

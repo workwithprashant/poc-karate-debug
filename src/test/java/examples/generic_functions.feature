@@ -3,28 +3,7 @@ Feature:
 
 Background:
 
-	* json masterList =
-	"""
-	[
-  {
-    "id": "1",
-    "arch": "high",
-    "litter": 1,
-    "color": 1,
-    "name": "Super kitten",
-    "breeder": "Someone Ethical"
-  },
-  {
-    "id": "2",
-    "arch": "high",
-    "litter": 6,
-    "color": 2,
-    "name": "Poor Kitten",
-    "breeder": "Backyard"
-  }
-  ]
-	"""
-
+	* def masterList = read('classpath:examples/data.json')
 	# function for creating a random numeric value of length x
 	# Input: length of value
 	# output: random number of length x (input)
