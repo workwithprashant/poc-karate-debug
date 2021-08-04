@@ -4,6 +4,37 @@ Feature:
 Background:
 
 	* def masterList = read('classpath:examples/data.json')
+
+	* def createJson =
+    """
+        function(keyList, valList) {
+            var res= [];
+            var rowNum = 0;
+            for (var i = 0; i < valList.length; i = i + keyList.length){
+            	var tmp = {};
+              var rowNum = rowNum + 1;
+              tmp["rowNum"] = "" + rowNum;
+              for ( var j = 0; j < keyList.length; j++){
+              	var aKey = keyList[j];
+              	// if column name doesn't have any text, we assume it's an empty column;
+              	if (aKey == "") { continue; }
+
+              	// if we run out of data (# of cells not a multiple of # of columns,
+              	// quit the loop
+              	if (i+j >= valList.length) { break; }
+
+              	var aVal = valList[i+j];
+
+              	// change '--' to "" for historic purposes
+                if (aVal == '--') {aVal = "";}
+                tmp[aKey] = aVal;
+              }
+              res.push(tmp);
+            }
+            return res
+        }
+    """
+
 	# function for creating a random numeric value of length x
 	# Input: length of value
 	# output: random number of length x (input)

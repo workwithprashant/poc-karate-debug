@@ -4,10 +4,9 @@ Feature: sample karate test script
 
   Background:
     * def randomTag = random_tag()
+    * def pageUrl = 'https://www.worldometers.info/world-population/population-by-country/'
 
-  Scenario: create a user and then get it by id
-    * def usersKittens = $masterList[*].id
-    * karate.log("users Kittens = ", usersKittens)
-    * def res = call read('classpath:examples/library.feature@getKittenIds')
-    * karate.log('user response = ', res)
-    * karate.log('Random Tag = ', randomTag)
+  Scenario: go to a web page and get some text
+    Given driver pageUrl
+    * driver.maximize()
+    * call read('classpath:examples/library.feature@scrapeThePage')
