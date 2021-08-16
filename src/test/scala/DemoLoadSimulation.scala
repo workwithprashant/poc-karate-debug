@@ -2,13 +2,17 @@ package simulations
 import com.intuit.karate.gatling.PreDef._
 import io.gatling.core.Predef._
 
+import scala.concurrent.duration._
+
 class DemoLoadSimulation extends Simulation {
   val usersRamp = 2;
-  val runDuration = 2;
+  val runDuration = 2 seconds;
   val rampDuration = 2;
-  val protocol = karateProtocol("/*" -> Nil)
+  val protocol = karateProtocol(
+  "/{ver}/airlines/{id}" -> Nil
+  )
   val getUsers = scenario("Get Users").during(runDuration) {
-    exec(karateFeature("classpath:examples/users.feature"))
+    exec(karateFeature("classpath:examples/users.feature")).pause(1000.milliseconds)
   }
 
   setUp(

@@ -9,7 +9,7 @@ Background:
 	"""
 	function(x) {
 	rand_str = '';
-	char_list = '0123456789';
+	char_list = '123456789';
 	char_length = char_list.length;
 	for ( var i = 0; i < x; i++) {
 		rand_str += char_list.charAt(Math.floor(Math.random() * char_length));
