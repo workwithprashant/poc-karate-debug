@@ -1,4 +1,4 @@
 # poc-karate-debug
 For debugging Karate test automation
 
-Execute `mvn clean test -P performance`
+Execute `mvn clean test -P functional`
