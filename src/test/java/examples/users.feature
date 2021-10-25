@@ -1,14 +1,37 @@
-Feature: sample karate test script
+@demo
+Feature: ABCD-001:sample karate test script
   for help, see: https://github.com/intuit/karate/wiki/IDE-Support
 
   Background:
     * url 'https://jsonplaceholder.typicode.com'
-#    * def randomNumber = random_number(2)
+    * def randomNumber = random_number(2)
 
-  @demo1 @demo2
-    @demo3
-  Scenario: create a user and then get it by id
-    * def response = call read('classpath:examples/library.feature@getusers')
+  @demo1
+  Scenario: ABCD-002:Sample test 1
+  * print randomNumber
+
+  @demo2
+  Scenario: ABCD-003: Sample test 2
+    * print randomNumber
+
+
+  @demo3
+  Scenario: ABCD-004 :Sample test 3
+    * print randomNumber
+
+  @demo4
+  Scenario: ABCD-004 Sample test 4
+    * print randomNumber
+
+
+
+
+
+
+
+
+
+
 #    * print response[0]
 #    * def user =
 #      """
