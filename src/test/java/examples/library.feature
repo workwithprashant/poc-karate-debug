@@ -11,7 +11,7 @@ Feature: sample karate test library
   @getusers
   Scenario: get all users and then get the first user by id
     Given path 'api', 'users'
-    * param delay = 15
+    * param delay = 1
     When method get
     Then status 200
     Then karate.log('Random Number = ', randomNumber)
