@@ -17,6 +17,7 @@ Background:
 	return rand_str;
 	}
 	"""
+	* def uuid = random_number(10)
 
 	# function to generate random run number, takes scenarioName and length of random number required as input
 	# Extracts jira number from scenarioName and appends to random number e.g for JIRA": "JIRA-722", this will return
@@ -60,8 +61,8 @@ Background:
 	return rand_str;
 	}
 	"""
-    
-    
+
+
 	# function to generate random run string based on a Jira number.
  	# takes scenarioName and length of random number required as input
 	# Extracts jira number from scenarioName, converts it to excel column letter and appends to random number
@@ -144,7 +145,7 @@ Background:
 
 	# function for getting the current date
 	# Input: none
-	# Output: current date in seconds 	
+	# Output: current date in seconds
     * def getCurrentDate =
     """
 		function() {

@@ -9,7 +9,8 @@ Feature: sample karate test script
   Scenario Outline: create a user and then get it by id
 #    * def response = call read('classpath:examples/library.feature@getusers')
     * karate.log('Iteration = ', <iteration>)
-    * karate.log('randomNumber', randomNumber)
+    * karate.log('randomNumber = ', randomNumber)
+    * karate.log('Unique UUID = ', uuid)
     Examples:
       |iteration  |
       | 1         |
