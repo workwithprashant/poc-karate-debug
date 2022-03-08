@@ -10,6 +10,7 @@ public class TestRunner {
         Results results = Runner
                 .path("classpath:")
                 .tags(Arrays.asList("demo"))
+                .timeoutMinutes(1)
                 .parallel(1);
     }
 }
