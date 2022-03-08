@@ -4,28 +4,26 @@ Feature: sample karate test script
 
   Background:
     * url 'https://jsonplaceholder.typicode.com'
-    * def randomTag = random_tag()
-
-  Scenario: create a user and then get it by id
-    * def response = call read('classpath:examples/library.feature@getusers')
-    * print response[0]
-    * def user =
+    * def randomNumber = random_number(2)
+    * def sleep =
       """
-      {
-        "name": "Test User",
-        "username": "testuser",
-        "email": "test@user.com",
-        "address": {
-          "street": "Has No Name",
-          "suite": "Apt. 123",
-          "city": "Electri",
-          "zipcode": "54321-6789"
+      function(seconds){
+        for(i = 0; i <= seconds; i++)
+        {
+          java.lang.Thread.sleep(1*1000);
+          karate.log(i);
         }
       }
       """
 
-    Given url 'https://jsonplaceholder.typicode.com/users'
-    And request user
-    When method post
-    Then status 201
-    Then karate.log('Random Tag = ', randomTag)
+  Scenario Outline: create a user and then get it by id
+#    * def response = call read('classpath:examples/library.feature@getusers')
+    * karate.log('Iteration = ', <iteration>)
+    * karate.log('randomNumber = ', randomNumber)
+    * karate.log('Unique UUID = ', uuid)
+    * sleep(70)
+    * def var = 'foo'
+    Examples:
+      |iteration  |
+      | 1         |
+#      | 2         |
