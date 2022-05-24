@@ -6,7 +6,7 @@ Feature: someKey-123: Todo: Notice how it complains about spaces in the feature 
   Background:
     * url 'https://jsonplaceholder.typicode.com'
     * def randomNumber = random_number(2)
-#    todo: function name is expected syntax error three line below this
+#    todo: function name is expected syntax error three line below
     * def sleep =
       """
       function(seconds){
@@ -19,7 +19,7 @@ Feature: someKey-123: Todo: Notice how it complains about spaces in the feature 
       """
 
 #  Todo: I would like to be able to tell at a glance what vars this scenario expects as an input, and what vars it creates
-# Some kinf of auto generated  docstring, something like this:
+# Some kind of auto generated  docstring, something like this:
 #  Inputs: randomNumber
 #           uuid
 #  Creates vars: myVar
@@ -37,7 +37,12 @@ Feature: someKey-123: Todo: Notice how it complains about spaces in the feature 
 #      |"someKey-891"| 2         |
 
 #  todo: ctrl-click works with karate.call but not with call read
-  Scenario: someKey-567: navigation doesn't work with call read
+  Scenario: someKey-567: navigation doesnt work with call read
     * def res = karate.call('classpath:src/test/java/examples/library.feature@getusers')
     * def res = call read('classpath:src/test/java/examples/library.feature@getusers')
 
+#    todo: I would like to retain functionality of Cucumber+ plugin
+#  it allows an easy way of editing tables: add or delete column, insert row, etc.
+#  currently if karate plugin is enabled, cucumber+ functionality is lost
+#
+#  relevant plugins installed: Cucumber +, Navigate From Literal
