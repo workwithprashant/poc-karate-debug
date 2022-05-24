@@ -1,5 +1,5 @@
 @demo
-Feature: Somekey-123: Notice how it complains about spaces in the feature file
+Feature: someKey-123: Todo: Notice how it complains about spaces in the feature file
 
 #  for help, see: https://github.com/intuit/karate/wiki/IDE-Support
 
@@ -24,7 +24,7 @@ Feature: Somekey-123: Notice how it complains about spaces in the feature file
 #           uuid
 #  Creates vars: myVar
 
-  Scenario Outline: create a user and then get it by id
+  Scenario Outline: <testKey> - create a user and then get it by id
 #    * def response = call read('classpath:examples/library.feature@getusers')
     * karate.log('Iteration = ', <iteration>)
     * karate.log('randomNumber = ', randomNumber)
@@ -32,11 +32,12 @@ Feature: Somekey-123: Notice how it complains about spaces in the feature file
     * sleep(70)
     * def myVar = 'foo'
     Examples:
-      |iteration  |
-      | 1         |
-#      | 2         |
+      | testKey |iteration  |
+      |"someKey-890"| 1         |
+#      |"someKey-891"| 2         |
 
-  Scenario: Somekey-567: navigation doesn't work with call read
+#  todo: ctrl-click works with karate.call but not with call read
+  Scenario: someKey-567: navigation doesn't work with call read
     * def res = karate.call('classpath:src/test/java/examples/library.feature@getusers')
     * def res = call read('classpath:src/test/java/examples/library.feature@getusers')
 
